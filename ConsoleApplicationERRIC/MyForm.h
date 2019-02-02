@@ -201,7 +201,7 @@ namespace ConsoleApplicationERRIC {
 			// 
 			// Column4
 			// 
-			this->Column4->HeaderText = L"Command";
+			this->Column4->HeaderText = L"Instruction";
 			this->Column4->Name = L"Column4";
 			this->Column4->ReadOnly = true;
 			// 
@@ -427,8 +427,8 @@ namespace ConsoleApplicationERRIC {
 		}
 	}
 	private: System::Void highlightCurrentCommand() {
-		//bool-int-bool magic again
-		int a = Convert::ToUInt32(regDGV->Rows[PC - (N_REGISTERS / 2) * (PC > N_REGISTERS / 2)]->Cells[1 + 2 * (PC > N_REGISTERS / 2)]->Value);
+		//bool-int-bool magic again6
+		int a = Convert::ToUInt32(regDGV->Rows[PC - (N_REGISTERS / 2) * (PC > N_REGISTERS / 2)]->Cells[1 + 2 * (PC > N_REGISTERS / 2)]->Value->ToString(), 16);
 		commandDGV->Rows[a]->Selected = true;
 	}
 	};
